@@ -2,6 +2,8 @@ package lab.producer.controller;
 
 
 import lab.producer.service.Producer_1;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +14,8 @@ import java.util.concurrent.CompletionException;
 @RestController
 @RequestMapping("api/producer_1")
 public class producer_1Controller {
-
+    private static final Logger log =
+            LoggerFactory.getLogger(producer_1Controller.class);
     private final Producer_1 producer_1;
 
     private producer_1Controller(Producer_1 producer_1){
@@ -26,6 +29,7 @@ public class producer_1Controller {
             return ResponseEntity.ok(producer_1.process(message));
         }
         catch(CompletionException e) {
+            log.error("Échec de publication Kafka ", e);
         return ResponseEntity
                 .status(HttpStatus.SERVICE_UNAVAILABLE)
                 .body("Erreur de publication Kafka : "
