@@ -32,5 +32,9 @@ build/
 ### VS Code ###
 .vscode/
 
-## leslogs
-.log
+
+# Logs Spring Boot
+logs/
+**/logs/
+*.log
+*.log.gz
