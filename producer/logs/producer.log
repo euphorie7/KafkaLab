@@ -2470,3 +2470,248 @@ Caused by: org.apache.kafka.common.errors.UnknownTopicOrPartitionException: This
 2026-10-16 11:13:17.779 [producer] [http-nio-8081-exec-1]  INFO  lab.producer.service.Producer_1 - Publication confirmée : topic=EvennementMetier_1, partition=0, offset=7
 2026-10-16 11:39:18.231 [producer] [kafka-producer-network-thread | producer-producer-1]  INFO  org.apache.kafka.clients.Metadata - [Producer clientId=producer-producer-1] Rebootstrapping with [localhost/127.0.0.1:6000]
 2026-10-16 11:39:18.241 [producer] [kafka-producer-network-thread | producer-producer-1]  INFO  org.apache.kafka.clients.Metadata - [Producer clientId=producer-producer-1] Cluster ID: HW17MREZQPWvqjmJqTSS3Q
+2026-10-16 11:55:07.595 [producer] [restartedMain]  INFO  lab.producer.ProducerApplication - Starting ProducerApplication using Java 21.0.1 with PID 12192 (C:\Users\dell\Desktop\kafkaLab\producer\target\classes started by dell in C:\Users\dell\Desktop\kafkaLab\producer)
+2026-10-16 11:55:07.596 [producer] [restartedMain]  DEBUG lab.producer.ProducerApplication - Running with Spring Boot v4.1.1, Spring v7.0.9
+2026-10-16 11:55:07.597 [producer] [restartedMain]  INFO  lab.producer.ProducerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-10-16 11:55:07.640 [producer] [restartedMain]  INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-10-16 11:55:07.640 [producer] [restartedMain]  INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-10-16 11:55:08.848 [producer] [restartedMain]  INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-10-16 11:55:08.869 [producer] [restartedMain]  INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-16 11:55:08.869 [producer] [restartedMain]  INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-16 11:55:08.920 [producer] [restartedMain]  INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1279 ms
+2026-10-16 11:55:09.666 [producer] [restartedMain]  INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-10-16 11:55:09.740 [producer] [restartedMain]  INFO  o.a.k.common.config.AbstractConfig - AdminClientConfig values: 
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:6000]
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-admin-0
+	config.providers = []
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 5000
+	enable.metrics.push = false
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 3000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = []
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = []
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2026-10-16 11:55:09.871 [producer] [restartedMain]  INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 4.2.1
+2026-10-16 11:55:09.871 [producer] [restartedMain]  INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 92f61c44867f39dc
+2026-10-16 11:55:09.871 [producer] [restartedMain]  INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1792144509871
+2026-10-16 11:55:10.265 [producer] [restartedMain]  INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2026-10-16 11:55:10.266 [producer] [restartedMain]  INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-16 11:55:10.266 [producer] [restartedMain]  INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2026-10-16 11:55:10.267 [producer] [kafka-admin-client-thread | producer-admin-0]  INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for producer-admin-0 unregistered
+2026-10-16 11:55:10.274 [producer] [kafka-admin-client-thread | producer-admin-0]  INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2026-10-16 11:55:10.274 [producer] [kafka-admin-client-thread | producer-admin-0]  INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-16 11:55:10.275 [producer] [kafka-admin-client-thread | producer-admin-0]  INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2026-10-16 11:55:10.291 [producer] [restartedMain]  INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-10-16 11:55:10.305 [producer] [restartedMain]  INFO  lab.producer.ProducerApplication - Started ProducerApplication in 3.13 seconds (process running for 3.552)
+2026-10-16 11:55:10.318 [producer] [restartedMain]  WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-16 11:55:10.318 [producer] [restartedMain]  WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-16 11:55:11.082 [producer] [http-nio-8081-exec-1]  INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-16 11:55:11.082 [producer] [http-nio-8081-exec-1]  INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-16 11:55:11.087 [producer] [http-nio-8081-exec-1]  INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2026-10-16 11:55:11.151 [producer] [http-nio-8081-exec-1]  INFO  lab.producer.service.Producer_1 - Début de publication Kafka : topic=EvennementMetier_1, key=123
+2026-10-16 11:55:11.179 [producer] [http-nio-8081-exec-1]  INFO  o.a.k.common.config.AbstractConfig - ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [localhost:6000]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-producer-1
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	config.providers = []
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 5
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = []
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = []
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transaction.two.phase.commit.enable = false
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2026-10-16 11:55:11.214 [producer] [http-nio-8081-exec-1]  INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2026-10-16 11:55:11.229 [producer] [http-nio-8081-exec-1]  INFO  o.a.k.clients.producer.KafkaProducer - [Producer clientId=producer-producer-1] Instantiated an idempotent producer.
+2026-10-16 11:55:11.281 [producer] [http-nio-8081-exec-1]  INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 4.2.1
+2026-10-16 11:55:11.281 [producer] [http-nio-8081-exec-1]  INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 92f61c44867f39dc
+2026-10-16 11:55:11.281 [producer] [http-nio-8081-exec-1]  INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1792144511281
+2026-10-16 11:55:11.309 [producer] [kafka-producer-network-thread | producer-producer-1]  INFO  org.apache.kafka.clients.Metadata - [Producer clientId=producer-producer-1] Cluster ID: HW17MREZQPWvqjmJqTSS3Q
+2026-10-16 11:55:11.311 [producer] [kafka-producer-network-thread | producer-producer-1]  INFO  o.a.k.c.p.i.TransactionManager - [Producer clientId=producer-producer-1] ProducerId set to 1002 with epoch 0
+2026-10-16 11:55:11.347 [producer] [http-nio-8081-exec-1]  INFO  lab.producer.service.Producer_1 - Attendre la response future (join)
+2026-10-16 11:55:11.376 [producer] [http-nio-8081-exec-1]  INFO  lab.producer.service.Producer_1 - Publication confirmée : topic=EvennementMetier_1, partition=0, offset=8
