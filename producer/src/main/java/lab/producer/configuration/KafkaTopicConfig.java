@@ -8,7 +8,7 @@ public class KafkaTopicConfig {
     @Bean
     public NewTopic evenementMetierTopic() {
         return new NewTopic(
-                "EvenementMetier_1",
+                "EvennementMetier_1",
                 1,
                 (short) 1
         );

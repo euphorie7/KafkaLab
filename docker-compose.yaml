@@ -23,6 +23,7 @@ services:
         KAFKA_ADVERTISED_LISTENERS: DOCKER://kafka:5000,LOCAL://localhost:6000
         # Entre Brokers on communique via ce reseau !
         KAFKA_INTER_BROKER_LISTENER_NAME: DOCKER
+        KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
 
         #         Paramètre	                          Rôle
         # OFFSETS_TOPIC_REPLICATION_FACTOR	          Nombre de copies des offsets des consommateurs
