@@ -21,19 +21,12 @@
 
 ```mermaid
 flowchart TD
-    subgraph APP["Microservice Spring Boot — Producer"]
-        P["Producer_1<br/>KafkaTemplate"]
-        LIB["kafka-commun<br/>Bibliothèque Maven"]
-        LIB -.->|"Héritage : AbstractProducer"| P
-    end
-
-    P -->|"Publication des événements"| K
-
-    subgraph BROKER["Apache Kafka Broker"]
-        K["Topic : EvenementMetier_1<br/>Partition 1"]
-    end
-
-    UI["Kafka UI"] -.->|"Inspection des messages"| K
+    S["Swagger UI"] -->|"HTTP POST"| C["REST Controller"]
+    C --> P["Producer_1"]
+    LIB["kafka-commun (bibliothèque Maven)"] -.->|"AbstractProducer"| P
+    P -->|"KafkaTemplate.send()"| K["Kafka Broker"]
+    K --> T["Topic : EvenementMetier_1"]
+    UI["Kafka UI"] -.->|"Inspection des événements"| T
 ```
 
 ## 3. Implémentation / Procédure
