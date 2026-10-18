@@ -28,6 +28,29 @@ public class Producer_1 extends AbstractProducer<String> {
     }
 
     @Override
+    public String process(String key, String message) {
+
+
+        log.info("Début de publication Kafka : topic={}, key={}",
+                getTopic(), key);
+
+        CompletableFuture<SendResult<String, String>>  future = publish(key, message);
+
+        log.info("Attendre la response future (join)");
+        // equivalent de await en typescrit c'est join
+        SendResult<String, String> result = future.join();
+
+        RecordMetadata metadata = result.getRecordMetadata();
+        log.info(
+                "Publication confirmée : topic={}, partition={}, offset={}",
+                metadata.topic(),
+                metadata.partition(),
+                metadata.offset()
+        );
+
+        return "Message envoye avec succes : " + metadata;
+
+    }
     public String process(String message) {
 
         int elementMetier_id = 123;

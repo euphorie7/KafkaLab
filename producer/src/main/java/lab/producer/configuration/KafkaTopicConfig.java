@@ -9,7 +9,7 @@ public class KafkaTopicConfig {
     public NewTopic evenementMetierTopic() {
         return new NewTopic(
                 "EvennementMetier_1",
-                1,
+                3,
                 (short) 1
         );
     }
