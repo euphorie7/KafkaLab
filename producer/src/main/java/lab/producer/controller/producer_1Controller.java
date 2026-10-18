@@ -9,7 +9,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.CompletionException;
-
+record Request (
+    String key,
+    String message
+){}
 
 @RestController
 @RequestMapping("api/producer_1")
@@ -23,10 +26,11 @@ public class producer_1Controller {
     }
 
     @PostMapping("lance_le_process")
-    public ResponseEntity<String> lancer_le_process(@RequestBody String message) {
+    public ResponseEntity<String> lancer_le_process(
+                                                    @RequestBody Request body) {
 
         try {
-            return ResponseEntity.ok(producer_1.process(message));
+            return ResponseEntity.ok(producer_1.process(body.key(),body.message()));
         }
         catch(CompletionException e) {
             log.error("Échec de publication Kafka ", e);

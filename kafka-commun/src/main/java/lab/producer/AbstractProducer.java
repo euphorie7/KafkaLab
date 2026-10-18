@@ -27,6 +27,7 @@ public abstract class AbstractProducer<T> {
     }
 
     public abstract String process(String message);
+    public abstract String process(String key, String message);
 
 
 }
