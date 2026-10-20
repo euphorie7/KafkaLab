@@ -5,6 +5,8 @@ services:
       image: apache/kafka:4.1.1
       container_name: kafka
       hostname: kafka
+      networks:
+        - kafka-lab-network
 
       environment:
         CLUSTER_ID: "HW17MREZQPWvqjmJqTSS3Q"
@@ -52,6 +54,8 @@ services:
    kafka-ui:
       image: provectuslabs/kafka-ui:latest
       container_name: kafka-ui
+      networks:
+        - kafka-lab-network
 
       environment:
         KAFKA_CLUSTERS_0_NAME: KafkaLab
@@ -65,3 +69,10 @@ services:
   
 volumes:
   kafka_data:
+
+
+networks:
+  kafka-lab-network:
+    #imposer le nom et pas faire les composition pardefaut {name}-{network} ... x
+    name: kafka-lab-network
+    driver: bridge
