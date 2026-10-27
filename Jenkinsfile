@@ -24,7 +24,7 @@ pipeline {
 
         REGISTRY = 'localhost:5000'
 
-        APP_NAME = 'Kafkalab'
+        APP_NAME = 'kafkalab'
 
 
         COMMON_MODULE = 'kafka-commun'
@@ -147,7 +147,7 @@ pipeline {
 
                     set -eu
 
-                    VERSION="V${BUILD_NUMBER}"
+                    VERSION="v${BUILD_NUMBER}"
 
                     BASE_PATH="${REGISTRY}/${APP_NAME}/${VERSION}"
 
