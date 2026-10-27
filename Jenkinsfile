@@ -155,9 +155,9 @@ pipeline {
                     "${BASE_PATH}/producer:${VERSION}"
 
                     docker tag "${CONSUMER_IMAGE}":latest \
-                    "${BASE_PATH}/producer:${VERSION}" 
+                    "${BASE_PATH}/consumer:${VERSION}" 
 
-                    docker push "${BASE_PATH}/consumer:${VERSION}"
+                    docker push "${BASE_PATH}/producer:${VERSION}"
                     docker push "${BASE_PATH}/consumer:${VERSION}"
 
 
