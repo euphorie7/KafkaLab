@@ -44,6 +44,12 @@ pipeline {
 
     stages {
 
+        stage('Debug Jenkinsfile') {
+            steps {
+                echo 'VERSION JENKINSFILE CORRIGÉE'
+            }
+        }
+
         stage('git checkout') {
 
             steps {
