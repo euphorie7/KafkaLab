@@ -1,0 +1,26 @@
+services:
+  consumer_1:
+      build : .
+      image: kafkalab-consumer:1.0
+      environment:
+          APP_NAME: consumer_1
+          CONSUMER_GROUP_ID: ResponsabiliteMetier_1
+          KAFKA_TOPIC: EvennementMetier_1
+          KAFKA_BOOTSTRAP_SERVERS: kafka:5000
+      networks:
+        - kafka-lab-network
+
+  consumer_2:
+      image: kafkalab-consumer:1.0
+      environment:
+        APP_NAME: consumer_2
+        CONSUMER_GROUP_ID: ResponsabiliteMetier_2
+        KAFKA_TOPIC: EvennementMetier_1
+        # dns name of the container of kafka cluster
+        KAFKA_BOOTSTRAP_SERVERS: kafka:5000
+      networks:
+        - kafka-lab-network
+
+networks:
+  kafka-lab-network:
+    external: true

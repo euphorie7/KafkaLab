@@ -1,0 +1,78 @@
+name: kafka-lab
+
+services:
+   kafka:
+      image: apache/kafka:4.1.1
+      container_name: kafka
+      hostname: kafka
+      networks:
+        - kafka-lab-network
+
+      environment:
+        CLUSTER_ID: "HW17MREZQPWvqjmJqTSS3Q"
+        KAFKA_NODE_ID: 1
+        KAFKA_PROCESS_ROLES: broker,controller
+
+        # KRaft quorum static 
+        KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+        KAFKA_CONTROLLER_LISTENER_NAMES: KRAFT
+
+        # Communication réseau
+
+        # Kafka ecoute ici 
+        KAFKA_LISTENERS: DOCKER://:5000,LOCAL://:6000,KRAFT://:9093
+        # Si quelqu'un demande alors voila mes adresse sur les quelles tu peux me joindre! 
+        KAFKA_ADVERTISED_LISTENERS: DOCKER://kafka:5000,LOCAL://localhost:6000
+        # Entre Brokers on communique via ce reseau !
+        KAFKA_INTER_BROKER_LISTENER_NAME: DOCKER
+        KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
+
+        #         Paramètre	                          Rôle
+        # OFFSETS_TOPIC_REPLICATION_FACTOR	          Nombre de copies des offsets des consommateurs
+        # TRANSACTION_STATE_LOG_REPLICATION_FACTOR	  Nombre de copies des états transactionnels
+        # TRANSACTION_STATE_LOG_MIN_ISR	              Minimum de répliques synchronisées pour les transactions
+        # DEFAULT_REPLICATION_FACTOR	                Nombre de copies par défaut des partitions des nouveaux topics
+
+        # Réplication : un seul broker
+        KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+        KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+        KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+        KAFKA_DEFAULT_REPLICATION_FACTOR: 1
+
+        KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: DOCKER:PLAINTEXT,LOCAL:PLAINTEXT,KRAFT:PLAINTEXT
+
+
+
+
+      ports:
+      - "6000:6000"
+
+      volumes:
+      - kafka_data:/var/lib/kafka/data
+
+
+   kafka-ui:
+      image: provectuslabs/kafka-ui:latest
+      container_name: kafka-ui
+      networks:
+        - kafka-lab-network
+
+      environment:
+        KAFKA_CLUSTERS_0_NAME: KafkaLab
+        KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:5000
+
+      depends_on:
+        - kafka
+
+      ports:
+      - "8080:8080"
+  
+volumes:
+  kafka_data:
+
+
+networks:
+  kafka-lab-network:
+    #imposer le nom et pas faire les composition pardefaut {name}-{network} ... x
+    name: kafka-lab-network
+    driver: bridge
